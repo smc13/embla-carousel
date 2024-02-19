@@ -48,7 +48,7 @@ function emblaCarouselVue(
       if (areOptionsEqual(storedOptions.value, newOptions)) return
       storedOptions.value = newOptions
       reInit()
-    })
+    }, { flush: 'post' })
   }
 
   if (isRef(plugins)) {
@@ -56,7 +56,7 @@ function emblaCarouselVue(
       if (arePluginsEqual(storedPlugins.value, newPlugins)) return
       storedPlugins.value = newPlugins
       reInit()
-    })
+    }, { flush: 'post' })
   }
 
   return [emblaNode, emblaApi]
